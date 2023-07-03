@@ -34,6 +34,7 @@
             <a class="nav-link active" aria-current="page" href="#">Health</a>
           </li>
         </ul>
+       
         <div class="d-flex" role="search">
           <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" onclick="newsSearch()" type="submit">Search</button>
@@ -42,14 +43,22 @@
     </div>
   </nav>
 
+  <div id="conatiner-New">
+    <div class="container-fluid ">
+     <div class="row justify-content-center text-center"  id="news">
+       
+     </div>
 
-  <div class="d-flex flex-wrap m-4 justify-content-between " id="news">
-
+  <div  class="d-flex justify-content-center" style="margin-top:20%;">
+    <div class="spinner-border text-primary"  role="status" id="loader">
+      <span class="visually-hidden">Loading...</span>
+    </div>
   </div>
       
 
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.min.js" integrity="sha512-42PE0rd+wZ2hNXftlM78BSehIGzezNeQuzihiBCvUEB3CVxHvsShF86wBWwQORNxNINlBPuq7rG4WWhNiTVHFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
 </body>
 </html>
