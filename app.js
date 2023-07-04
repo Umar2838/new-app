@@ -1,53 +1,61 @@
-let loader = document.getElementById("loader")
-let NewsContainer = document.getElementById("container-News")
-
-let getnews = ()=>{
-
-
-fetch(`https://api.currentsapi.services/v1/search?keyword=${search}&language=en&apiKey=_B3cXkK3aezrD-JbTrdj_ONN79n_d9dwBUC9bePBWkPLdplg`)
+getNews = (search)=>{
+  let loader = document.getElementById("loader")
+  let content = document.getElementById("content")
+fetch(`https://api.currentsapi.services/v1/search?keywords=${search}&language=en&page_size=12&apiKey=_B3cXkK3aezrD-JbTrdj_ONN79n_d9dwBUC9bePBWkPLdplg`)
+// https://api.currentsapi.services/v1/search?' +
+//             'keywords=Amazon&language=en&' + 
+//             'apiKey=API_KEY';
 .then(data=> data.json())
-.then( data=>{
+.then(data=> {
+  console.log(data)
   loader.style.display = "none"
-  // NewsContainer.style.display = "block"
-    let news = document.getElementById("news")
-   
-   const article = data.news
-    for(var i=0 ; i< article.length ; i++ ){
-        const { title,image,description,published } = article[i]
-   news.innerHTML += ` 
-   <div class="card mt-4" style="width: 18rem;">
-  
+  content.style.display = "block"
+  let news = document.getElementById("news")
+  const articles = data.news
+for(i=0;i<articles.length;i++)
 
-   <img id="newsImage" src= "${article[i].image}" class="card-img-top news-img" alt="...">
-   <div class="card-body">
-     <h5 class="card-title"> "${article[i].title}"</h5>
-     <p class="card-text">"${article[i].description.slice(0,100)+"....."}"</p>
-     <p class="badge rounded-pill text-bg-secondary newsdate ">${moment(data.news[i].published).fromNow()}</p>
-   </div>
-   </img>
+news.innerHTML += `
+<div class="card newsCard mt-2 bg-primary " style="width: 18rem;">
+<a href="${articles[i].url}" >
+<img src="${articles[i].image}" class="card-img-top news-img" alt="...">
+</a>
+<div class="card-body">
+  <h5 class="card-title text-light">${articles[i].title.slice(0,20)+"...."}</h5>
+  <p class="card-text text-light">${articles[i].description.slice(0,50)}</p>
+  <span class="badge text-bg-light mb-2 ">${moment(data.news[i].published).fromNow()}</span>
+  </br>
 
- `
-//  if(urlToImage == null){
-
-// document.getElementById("newsImage").style.src = "none"
-
-//  }
-    }
-
+</div>
+</div> 
+`
 })
-.catch(err=>(console.log(err)))
+
+
+.catch(err=>console.log(err))
+}
+getNews("news")
+
+let page = 1;
+
+newsSearch = ()=>{
+  let search = document.getElementById("search")
+  news.innerHTML = ""
+
+  loader.style.display = "flex"
+  content.style.display = "none"
+  getNews(search.value)
 }
 
-
-let newsSearch = ()=>{
-    let news = document.getElementById("news")
-    let search = document.getElementById("search")
- 
-    news.innerHTML=""
-
-    getnews(search.value)
-    
+let loadMore = () =>{
+  let search = document.getElementById("search")
+  page++;
+  getNews(search.value,page)
+  loader.style.display = "flex"
+  content.style.display = "none"
 }
-getnews()
 
-
+window.onscroll = function(data){
+  if((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight) {
+loadMore()
+  }
+  };

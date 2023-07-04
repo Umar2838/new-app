@@ -9,52 +9,51 @@
     <title>News App</title>
 </head>
 <body class="m-0 p-0">
-
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<!-- Navbar -->
+  <nav class="navbar  navbar-expand-lg bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">News App</a>
+      <a class="navbar-brand text-light " href="#">BA KHABAR</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" onclick="Business()" id="business" aria-current="page"  href="#">Business</a>
+            <a class="nav-link text-light active" onclick="Business()" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Entertainment</a>
+            <a class="nav-link text-light" href="#">Business</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Technology</a>
+            <a class="nav-link text-light" href="#">Entertainment</a>
+          </li>   <li class="nav-item">
+            <a class="nav-link text-light" href="#">Sports</a>
+          </li>   <li class="nav-item">
+            <a class="nav-link text-light" href="#">Technology</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Sport</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Health</a>
+            <a class="nav-link text-light" href="#">Finance</a>
           </li>
         </ul>
-       
-        <div class="d-flex" role="search">
+        <div  class="d-flex" role="search">
           <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" onclick="newsSearch()" type="submit">Search</button>
-      </div>
+          <button class="btn btn-outline-light" onclick="newsSearch()" type="submit">Search</button>
+        </div>
       </div>
     </div>
   </nav>
 
-  <div id="conatiner-New">
-    <div class="container-fluid ">
-     <div class="row justify-content-center text-center"  id="news">
-       
-     </div>
+  <!-- News Swection -->
+  <div id="content"  class="content">
+  <div class="d-flex flex-wrap justify-content-between mt-4" id="news"</div>
+  </div>
 
-  <div  class="d-flex justify-content-center" style="margin-top:20%;">
-    <div class="spinner-border text-primary"  role="status" id="loader">
+
+  <div class="loader" id="loader">
+    <div class="spinner-grow text-primary" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
   </div>
-      
 
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
