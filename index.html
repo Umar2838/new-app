@@ -12,32 +12,32 @@
 <!-- Navbar -->
   <nav class="navbar  navbar-expand-lg bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand text-light " href="#">BA KHABAR</a>
+      <a class="navbar-brand text-light " href="#"><b>BA KHABAR</b></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link text-light active" onclick="Business()" aria-current="page" href="#">Home</a>
+            <a class="nav-link otherlink text-light active"  aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">Business</a>
+            <a class="nav-link otherlink text-light" id="business" href="#business" >Business</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">Entertainment</a>
+            <a class="nav-link otherlink text-light" id="entertainment" href="#entertainment">Entertainment</a>
           </li>   <li class="nav-item">
-            <a class="nav-link text-light" href="#">Sports</a>
+            <a class="nav-link otherlink text-light" id="sports" href="#sports">Sports</a>
           </li>   <li class="nav-item">
-            <a class="nav-link text-light" href="#">Technology</a>
+            <a class="nav-link otherlink text-light" id="technology" href="#technology">Technology</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">Finance</a>
+            <a class="nav-link otherlink text-light" id="finance" href="#finance">Finance</a>
           </li>
         </ul>
         <div  class="d-flex" role="search">
           <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-light" onclick="newsSearch()" type="submit">Search</button>
+          <button class="btn btn-outline-light" onclick="newsSearch()" type="submit"><b>Search</b></button>
         </div>
       </div>
     </div>
@@ -54,6 +54,8 @@
       <span class="visually-hidden">Loading...</span>
     </div>
   </div>
+
+ 
 
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -16,7 +16,28 @@
 width: 100px;
 height: 100px;
 }
-.newsCard{
+.newsCard {
     margin: 0 auto;
+    transition: 1s;
+    
+    
+}
+
+.newsCard:hover{
+    transform: scale(1.05);
+    z-index: 0.2;
+}
+
+.otherlink{
+    font-weight: bold !important;
+
+   
+ 
+}
+.otherlink:hover{
+
+    text-decoration: underline!important;
+    color: aliceblue !important;
+
 
 }

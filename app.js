@@ -2,9 +2,7 @@ getNews = (search)=>{
   let loader = document.getElementById("loader")
   let content = document.getElementById("content")
 fetch(`https://api.currentsapi.services/v1/search?keywords=${search}&language=en&page_size=12&apiKey=_B3cXkK3aezrD-JbTrdj_ONN79n_d9dwBUC9bePBWkPLdplg`)
-// https://api.currentsapi.services/v1/search?' +
-//             'keywords=Amazon&language=en&' + 
-//             'apiKey=API_KEY';
+
 .then(data=> data.json())
 .then(data=> {
   console.log(data)
@@ -33,25 +31,30 @@ news.innerHTML += `
 
 .catch(err=>console.log(err))
 }
-getNews("news")
+getNews("business")
 
 let page = 1;
 
-newsSearch = ()=>{
+newsSearch = (business)=>{
+  let loader = document.getElementById("loader")
+  let content = document.getElementById("content")
   let search = document.getElementById("search")
   news.innerHTML = ""
 
+
   loader.style.display = "flex"
   content.style.display = "none"
+
   getNews(search.value)
 }
 
 let loadMore = () =>{
   let search = document.getElementById("search")
   page++;
-  getNews(search.value,page)
+
   loader.style.display = "flex"
   content.style.display = "none"
+  getNews(search.value,page)
 }
 
 window.onscroll = function(data){
@@ -59,3 +62,8 @@ window.onscroll = function(data){
 loadMore()
   }
   };
+
+
+var business = document.getElementById("business")
+var entertainment = document.getElementById("entertainment")
+
